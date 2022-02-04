@@ -2,11 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vue</title>
-    <!-- Import tailwind -->
-    <script src="https://cdn.tailwindcss.com"></script>
+    <meta name="viewport">
+    <title>Hello Vue!</title>
 
     <!-- Import Vue.js -->
     <script src="https://unpkg.com/vue@next"></script>
@@ -14,26 +11,18 @@
 </head>
 <body>
     <div id="app">
-        <div class="counter-container">
-            <div class="counter-value">{{ counter }}</div>
-                
-            <div class="counter-button">
-                <div class="counter-button-increment">
-                    <button @click="increment">+</button>
-                </div>
-                <div class="counter-button-decrement">
-                    <button @click="decrement">-</button> 
-                </div>  
-            </div>
-        </div>
+        <h1>{{ message}}</h1>
     </div>
 
-    <!-- Import App -->
-    <script src="./assets/js/app.js"></script>
-
-    <!-- Mount App -->
+    <!-- Create & Mount App -->
     <script>
-        const mountedApp = app.mount("#app")
-    </script>
+        Vue.createApp({
+            data() {
+                return{
+                     message: 'Hello Vue!'
+                }
+            }
+        });     
+    </script>  
 </body>
 </html>
